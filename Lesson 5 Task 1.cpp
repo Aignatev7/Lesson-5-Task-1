@@ -3,43 +3,39 @@
 
 class Figure {
 protected:
-	int sides_count = 0;
 	std::string name = "Фигура";
+	int sides_count = 0;
 
 public:
-	Figure(int sides_count, std::string name) {
-		this->sides_count = sides_count;
+	Figure(std::string name, int sides_count) {
 		this->name = name;
+		this->sides_count = sides_count;
 	}
 
 	Figure() { sides_count = 0; }
+
+	std::string get_name() { return name; }
 
 	int get_sides_count() // публичный метод get_sides_count в классе Figure
 	{
 		return sides_count;
 	}
-
-	std::string get_name() { return name; }
 };
 
 class Triangle : public Figure {
-	int sides_count = 3;
-	std::string name = "Треугольник";
-
 public:
-	Triangle() {}
-	int get_sides_count() { return sides_count; }
-	std::string get_name() { return name; }
+	Triangle() {
+		name = "Треугольник";
+		sides_count = 3;
+	}
 };
 
 class Quadrangle : public Figure {
-	int sides_count = 4;
-	std::string name = "Четырехугольник";
-
 public:
-	Quadrangle() {}
-	int get_sides_count() { return sides_count; }
-	std::string get_name() { return name; }
+	Quadrangle() {
+		name = "Четырёхугольник";
+		sides_count = 4;
+	}
 };
 
 int main() {
